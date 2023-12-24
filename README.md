@@ -18,13 +18,13 @@
 ## 3. Calculate Inner Vertices
 ### Case 1: n=3 or 4
 <p float="left">
-<img src="images/figure-003.jpg" width="400"  />
+<img src="images/figure-003.jpg" width="450"  />
 </p>
 
 ### Case 2: n > 4
 Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
 <p float="left">
-<img src="images/figure-004.jpg" width="400" />
+<img src="images/figure-004.jpg" width="450" />
 </p>
 
 ### Case 3: x1=x2 or x3=x4
