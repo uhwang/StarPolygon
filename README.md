@@ -158,13 +158,6 @@ def star_polygon(xc, yc, nvert, radius):
             vs[2+i*4+1] = py
     return vs
 
-def plot_star_polygon(subnum, vss):
-    ax = plt.subplot(subnum)
-    ax.plot(vss[0::2], vss[1::2])
-    ax.scatter(vss[2::4], vss[3::4], color='hotpink')
-    ax.scatter(vss[::4], vss[1::4], color='green')
-    ax.axis('equal')
-
 class StarPolygon:
     def __init__(self,
                  sx, 
@@ -204,11 +197,11 @@ class StarPolygon:
         
     @property
     def uxs(self):
-        return self.vertex[3::4]
+        return self.vertex[2::4]
 
     @property
     def uys(self):
-        return self.vertex[4::4]
+        return self.vertex[3::4]
         
     @property
     def u_radius(self):
@@ -226,12 +219,19 @@ class StarPolygon:
             self.vertex[2+i*4] = self.sx+(self._u_vertex[i*2]-self.sx)*u
             self.vertex[2+i*4+1] = self.sy+(self._u_vertex[i*2+1]-self.sy)*u
 
+def plot_star_polygon(subnum, star):
+    ax = plt.subplot(subnum)
+    ax.plot(star.xss, star.yss, color='k')
+    ax.scatter(star.uxs, star.uys, color='hotpink')
+    ax.scatter(star.pxs, star.pys, color='darkred')
+    ax.axis('equal')
+
 def move_uvertex(subnum, star):
     uu = np.linspace(0.5, 1.5, 4)
     for u in uu:
         star.u_param = u
         plt.subplot(subnum)
-        plt.plot(star.xss, star.yss, color="k", linewidth=1)
+        plt.plot(star.xss, star.yss, color="lightskyblue", linewidth=1)
 
 def plot_all():
     stars = [StarPolygon(0,0,n) for n in range(3,9)]
@@ -241,7 +241,9 @@ def plot_all():
         subnum = nrow*100+ncol*10+(i+1)
         move_uvertex(subnum, st)
         st.reset_uvertex()
-        plot_star_polygon(subnum, st.vertex)
+        plot_star_polygon(subnum, st)
         
     plt.show()
+
+plot_all()
 ```
