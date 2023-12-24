@@ -1,8 +1,7 @@
-# StarPolygon
-12/23/2023
-How To Draw Star Polygons?
-Definition of Star Polygons
+# StarPolygon: How To Draw Star Polygons?
+# Date: 12/23/2023
 
+** Definition of Star Polygons **
 - Star polygons are inscribed in a circle of given radius.
 - Star polygons have outer vertices and inner vertices.
 - To find the inner vertices of a star polygon, we need to calculate the intersection points of the lines formed by the outer vertices. However, the calculation is different for the case where there are 3 or 4 outer vertices.
