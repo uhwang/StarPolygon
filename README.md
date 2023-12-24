@@ -97,7 +97,10 @@ Find the intersection point of two lines of given four outer vertices. The slope
 <img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
 ## 6. Move Inner Vertices**
-<img src="images/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/image11.png" style="width:6.1875in;height:1.64583in" />
+<p float="left">
+<img src="images/image10.png" width="300" />
+<img src="images/image11.png" width="250" />
+</p>
 
 ## 7. Result
 <img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
