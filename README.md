@@ -15,10 +15,11 @@
 <img src="images/image3.png" width="150" />
 <img src="images/image2.png" width="300" />
 </p>
+
 ## 3. Calculate Inner Vertices**
 ### Case 1: n=3 or 4
-<img src="images/image4.png" style="width:2.91667in;height:2.53125in" />
-<img src="images/image5.png" style="width:4.22917in;height:3.25in" />
+<img src="images/image4.png" width="150"  />
+<img src="images/image5.png" width="150"  />
 
 ### Case 2: n > 4
 Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
