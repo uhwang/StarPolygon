@@ -12,7 +12,7 @@
 ## 2. Calculate outer vertices**
 ### n : the number of outer vertices
 <p float="left">
-<img src="images/image3.png" width="100" />
+<img src="images/image3.png" width="150" />
 <img src="images/image2.png" width="300" />
 </p>
 ## 3. Calculate Inner Vertices**
