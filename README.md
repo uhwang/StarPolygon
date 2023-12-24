@@ -20,7 +20,7 @@
 ### Case 1: n=3 or 4
 <p float="left">
 <img src="images/image4.png" width="250"  />
-<img src="images/image5.png" width="250"  />
+<img src="images/image5.png" width="260"  />
 </p>
 
 ### Case 2: n > 4
