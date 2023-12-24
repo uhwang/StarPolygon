@@ -15,8 +15,8 @@
 <img src="images/image2.png" style="width:3.73958in;height:1.22917in" />
 
 ## 3. Calculate Inner Vertices**
-<img src="images/image4.png" style="width:2.91667in;height:2.53125in" />
 ### Case 1: n=3 or 4
+<img src="images/image4.png" style="width:2.91667in;height:2.53125in" />
 <img src="images/image5.png" style="width:4.22917in;height:3.25in" />
 
 ### Case 2: n > 4
@@ -238,6 +238,7 @@ def plot_all():
         plot_star_polygon(subnum, st.vertex)
         
     plt.show()
+```
 
 plot_all()
 ```
