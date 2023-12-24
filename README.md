@@ -92,7 +92,10 @@ n : the number of outer vertices
 6. Move Inner Vertices**
 <img src="images/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/image11.png" style="width:6.1875in;height:1.64583in" />
 
-7. Put All Together
+7. Result
+    <img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" /><img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
+
+8. Put All Together
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -237,9 +240,3 @@ def plot_all():
     plt.show()
 
 plot_all()
-
-<br>
-
-8. Result
-    <img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" /><img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
-
