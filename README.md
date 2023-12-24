@@ -107,7 +107,7 @@ n : the number of outer vertices
 
 <img src="images/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/image11.png" style="width:6.1875in;height:1.64583in" />
 
-7\. Put All Together
+**7. Put All Together
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -252,6 +252,7 @@ def plot_all():
     plt.show()
 
 plot_all()
+
 
 8. Result
 
