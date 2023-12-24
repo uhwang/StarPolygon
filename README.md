@@ -238,7 +238,7 @@ def plot_all():
 
 plot_all()
 
-
+<br>
 
 8. Result
     <img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" /><img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
