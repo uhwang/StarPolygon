@@ -223,7 +223,7 @@ def plot_star_polygon(subnum, star):
     ax = plt.subplot(subnum)
     ax.plot(star.xss, star.yss, color='k')
     ax.scatter(star.uxs, star.uys, color='hotpink')
-    ax.scatter(star.pxs, star.pys, color='darkred')
+    ax.scatter(star.pxs, star.pys, color='gold')
     ax.axis('equal')
 
 def move_uvertex(subnum, star):
