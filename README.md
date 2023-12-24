@@ -95,7 +95,7 @@ Find the intersection point of two lines of given four outer vertices. The slope
 
 ## 6. Move Inner Vertices
 <p float="left">
-<img src="images/figure-006.jpg" width="350" />
+<img src="images/figure-006.jpg" width="500" />
 </p>
 
 ## 7. Result
