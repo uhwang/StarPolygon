@@ -19,23 +19,23 @@ Definition of Star Polygons
 
 n : the number of outer vertices
 
-<img src="images/media/image2.png" style="width:3.73958in;height:1.22917in" /><img src="images/media/image3.png" style="width:2.21875in;height:2.15625in" />
+<img src="images/image2.png" style="width:3.73958in;height:1.22917in" /><img src="images/image3.png" style="width:2.21875in;height:2.15625in" />
 
 **3. Calculate Inner Vertices**
 
-- <img src="images/media/image4.png" style="width:2.91667in;height:2.53125in" />**Case 1: n=3 or 4**
+- <img src="images/image4.png" style="width:2.91667in;height:2.53125in" />**Case 1: n=3 or 4**
 
-<img src="images/media/image5.png" style="width:4.22917in;height:3.25in" />
+<img src="images/image5.png" style="width:4.22917in;height:3.25in" />
 
 - **Case 2: n \> 4**
 
 > Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
 
-<img src="images/media/image6.png" style="width:3.88542in;height:3.86458in" /><img src="images/media/image7.png" style="width:4.65625in;height:4.3125in" />
+<img src="images/image6.png" style="width:3.88542in;height:3.86458in" /><img src="images/image7.png" style="width:4.65625in;height:4.3125in" />
 
 - **When x1=x2 or x3=x4**
 
-<img src="images/media/image8.png" style="width:4.125in;height:2.25in" />
+<img src="images/image8.png" style="width:4.125in;height:2.25in" />
 
 **4. Intersection Point Line Index Sequence**
 
@@ -101,150 +101,159 @@ n : the number of outer vertices
 
 **5. Star Polygon (n= 3, 4, 5, 6, 7, 8 )**
 
-<img src="images/media/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
+<img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
 **6. Move Inner Vertices**
 
-<img src="images/media/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/media/image11.png" style="width:6.1875in;height:1.64583in" />
+<img src="images/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/image11.png" style="width:6.1875in;height:1.64583in" />
 
 7\. Put All Together
+```python
+import numpy as np
+import matplotlib.pyplot as plt
 
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>import numpy as np</p>
-<p>import matplotlib.pyplot as plt</p>
-<p>def star_polygon(xc, yc, nvert, radius):</p>
-<p>    vs = np.zeros(nvert*2*2+2)</p>
-<p>    for k in range(nvert):</p>
-<p>        angle = 0.5*(4*k+nvert)*np.pi/nvert</p>
-<p>        vs[k*4] = xc+radius*np.cos(angle)</p>
-<p>        vs[k*4+1] = yc+radius*np.sin(angle)</p>
-<p>    vs[-1] = vs[1]</p>
-<p>    vs[-2] = vs[0]</p>
-<p>    xx = vs[0::4]</p>
-<p>    yy = vs[1::4]</p>
-<p>    if nvert == 3 or nvert == 4:</p>
-<p>        default_u = nvert*0.1</p>
-<p>        for i in range(nvert):</p>
-<p>            angle = 2*np.pi*(i+1)/nvert+0.5*(nvert-2)*np.pi/nvert</p>
-<p>            px = xc+default_u*radius*np.cos(angle)</p>
-<p>            py = yc+default_u*radius*np.sin(angle)</p>
-<p>            vs[2+i*4] = px</p>
-<p>            vs[2+i*4+1] = py</p>
-<p>    else:</p>
-<p>        for i in range(nvert):</p>
-<p>            i1 = i</p>
-<p>            i2 = (i+2)%nvert</p>
-<p>            i3 = (i+1)%nvert</p>
-<p>            i4 = (nvert-1+i)%nvert</p>
-<p>            x1, y1 = xx[i1], yy[i1]</p>
-<p>            x2, y2 = xx[i2], yy[i2]</p>
-<p>            x3, y3 = xx[i3], yy[i3]</p>
-<p>            x4, y4 = xx[i4], yy[i4]</p>
-<p>            if abs(x2-x1) &lt; 1e-10:</p>
-<p>                m = (y4-y3)/(x4-x3)</p>
-<p>                px= x1</p>
-<p>                py= m*(px-x3)+y3</p>
-<p>            elif abs(x3-x4) &lt; 1e-10:</p>
-<p>                m = (y2-y1)/(x2-x1)</p>
-<p>                px= x3</p>
-<p>                py= m*(px-x1)+y1</p>
-<p>            else:</p>
-<p>                m1 = (y2-y1)/(x2-x1)</p>
-<p>                m2 = (y4-y3)/(x4-x3)</p>
-<p>                px = (m1*x1-y1-m2*x3+y3)/(m1-m2)</p>
-<p>                py = m1*(px-x1)+y1</p>
-<p>            vs[2+i*4] = px</p>
-<p>            vs[2+i*4+1] = py</p>
-<p>    return vs</p>
-<p>def plot_star_polygon(subnum, vss):</p>
-<p>    ax = plt.subplot(subnum)</p>
-<p>    ax.plot(vss[0::2], vss[1::2])</p>
-<p>    ax.scatter(vss[2::4], vss[3::4], color='hotpink')</p>
-<p>    ax.scatter(vss[::4], vss[1::4], color='green')</p>
-<p>    ax.axis('equal')</p>
-<p>class StarPolygon:</p>
-<p>    def __init__(self,</p>
-<p>                 sx,</p>
-<p>                 sy,</p>
-<p>                 nvert=5,</p>
-<p>                 radius  = 1,</p>
-<p>        ) -&gt; None:</p>
-<p>        if nvert &lt; 3:</p>
-<p>            raise ValueError('nvert must be greater than equal 3')</p>
-<p>        self.nvert = nvert</p>
-<p>        self.sx = sx</p>
-<p>        self.sy = sy</p>
-<p>        self.vertex = star_polygon(sx, sy, nvert, radius)</p>
-<p>        self._u_vertex = np.zeros(nvert*2)</p>
-<p>        self._u_vertex[::2] = self.vertex[2::4]</p>
-<p>        self._u_vertex[1::2] = self.vertex[3::4]</p>
-<p>    def reset_uvertex(self):</p>
-<p>        self.vertex[2::4] = self._u_vertex[0::2]</p>
-<p>        self.vertex[3::4] = self._u_vertex[1::2]</p>
-<p>    @property</p>
-<p>    def xss(self):</p>
-<p>        return self.vertex[0::2]</p>
-<p>       </p>
-<p>    @property</p>
-<p>    def yss(self):</p>
-<p>        return self.vertex[1::2]</p>
-<p>    @property</p>
-<p>    def pxs(self):</p>
-<p>        return self.vertex[0::4]</p>
-<p>    @property</p>
-<p>    def pys(self):</p>
-<p>        return self.vertex[1::4]</p>
-<p>       </p>
-<p>    @property</p>
-<p>    def uxs(self):</p>
-<p>        return self.vertex[3::4]</p>
-<p>    @property</p>
-<p>    def uys(self):</p>
-<p>        return self.vertex[4::4]</p>
-<p>       </p>
-<p>    @property</p>
-<p>    def u_radius(self):</p>
-<p>        return np.sqrt(self.vertex[2]**2+self.vertex[3]**2)</p>
-<p>       </p>
-<p>    @property</p>
-<p>    def u_param(self):</p>
-<p>        return self._param_u</p>
-<p>       </p>
-<p>    # u -&gt; 1 : inner radius</p>
-<p>    # u &lt; 1, u =1, u &gt; 1</p>
-<p>    @u_param.setter</p>
-<p>    def u_param(self, u):</p>
-<p>        for i in range(self.nvert):</p>
-<p>            self.vertex[2+i*4] = self.sx+(self._u_vertex[i*2]-self.sx)*u</p>
-<p>            self.vertex[2+i*4+1] = self.sy+(self._u_vertex[i*2+1]-self.sy)*u</p>
-<p>def move_uvertex(subnum, star):</p>
-<p>    uu = np.linspace(0.5, 1.5, 4)</p>
-<p>    for u in uu:</p>
-<p>        star.u_param = u</p>
-<p>        plt.subplot(subnum)</p>
-<p>        plt.plot(star.xss, star.yss, color="k", linewidth=1)</p>
-<p>def plot_all():</p>
-<p>    stars = [StarPolygon(0,0,n) for n in range(3,9)]</p>
-<p>    nrow, ncol = 2, 3</p>
-<p>   </p>
-<p>    for i, st in enumerate(stars):</p>
-<p>        subnum = nrow*100+ncol*10+(i+1)</p>
-<p>        move_uvertex(subnum, st)</p>
-<p>        st.reset_uvertex()</p>
-<p>        plot_star_polygon(subnum, st.vertex)</p>
-<p>       </p>
-<p>    plt.show()</p>
-<p>plot_all()</p></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+def star_polygon(xc, yc, nvert, radius):
+    vs = np.zeros(nvert*2*2+2)
 
-<img src="images/media/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" /><img src="images/media/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
+    for k in range(nvert):
+        angle = 0.5*(4*k+nvert)*np.pi/nvert
+        vs[k*4] = xc+radius*np.cos(angle) 
+        vs[k*4+1] = yc+radius*np.sin(angle) 
+    vs[-1] = vs[1]
+    vs[-2] = vs[0]
+
+    xx = vs[0::4]
+    yy = vs[1::4]
+
+    if nvert == 3 or nvert == 4:
+        default_u = nvert*0.1
+        for i in range(nvert):
+            angle = 2*np.pi*(i+1)/nvert+0.5*(nvert-2)*np.pi/nvert
+            px = xc+default_u*radius*np.cos(angle)
+            py = yc+default_u*radius*np.sin(angle)
+            vs[2+i*4] = px
+            vs[2+i*4+1] = py
+    else:
+        for i in range(nvert):
+            i1 = i
+            i2 = (i+2)%nvert
+            i3 = (i+1)%nvert
+            i4 = (nvert-1+i)%nvert
+
+            x1, y1 = xx[i1], yy[i1]
+            x2, y2 = xx[i2], yy[i2]
+            x3, y3 = xx[i3], yy[i3]
+            x4, y4 = xx[i4], yy[i4]
+
+            if abs(x2-x1) < 1e-10:
+                m = (y4-y3)/(x4-x3)
+                px= x1
+                py= m*(px-x3)+y3
+
+            elif abs(x3-x4) < 1e-10:
+                m = (y2-y1)/(x2-x1)
+                px= x3
+                py= m*(px-x1)+y1
+            else:
+                m1 = (y2-y1)/(x2-x1)
+                m2 = (y4-y3)/(x4-x3)
+                px = (m1*x1-y1-m2*x3+y3)/(m1-m2)
+                py = m1*(px-x1)+y1
+
+            vs[2+i*4] = px
+            vs[2+i*4+1] = py
+    return vs
+
+def plot_star_polygon(subnum, vss):
+    ax = plt.subplot(subnum)
+    ax.plot(vss[0::2], vss[1::2])
+    ax.scatter(vss[2::4], vss[3::4], color='hotpink')
+    ax.scatter(vss[::4], vss[1::4], color='green')
+    ax.axis('equal')
+
+class StarPolygon:
+    def __init__(self,
+                 sx, 
+                 sy, 
+                 nvert=5,
+                 radius  = 1,
+        ) -> None:
+        if nvert < 3:
+            raise ValueError('nvert must be greater than equal 3')
+        self.nvert = nvert
+        self.sx = sx
+        self.sy = sy
+        self.vertex = star_polygon(sx, sy, nvert, radius)
+        self._u_vertex = np.zeros(nvert*2)
+        self._u_vertex[::2] = self.vertex[2::4]
+        self._u_vertex[1::2] = self.vertex[3::4]
+
+    def reset_uvertex(self):
+        self.vertex[2::4] = self._u_vertex[0::2]
+        self.vertex[3::4] = self._u_vertex[1::2]
+
+    @property
+    def xss(self):
+        return self.vertex[0::2]
+        
+    @property
+    def yss(self):
+        return self.vertex[1::2]
+
+    @property
+    def pxs(self):
+        return self.vertex[0::4]
+
+    @property
+    def pys(self):
+        return self.vertex[1::4]
+        
+    @property
+    def uxs(self):
+        return self.vertex[3::4]
+
+    @property
+    def uys(self):
+        return self.vertex[4::4]
+        
+    @property
+    def u_radius(self):
+        return np.sqrt(self.vertex[2]**2+self.vertex[3]**2)
+        
+    @property
+    def u_param(self):
+        return self._param_u
+        
+    # u -> 1 : inner radius
+    # u < 1, u =1, u > 1
+    @u_param.setter
+    def u_param(self, u):
+        for i in range(self.nvert):
+            self.vertex[2+i*4] = self.sx+(self._u_vertex[i*2]-self.sx)*u
+            self.vertex[2+i*4+1] = self.sy+(self._u_vertex[i*2+1]-self.sy)*u
+
+def move_uvertex(subnum, star):
+    uu = np.linspace(0.5, 1.5, 4)
+    for u in uu:
+        star.u_param = u
+        plt.subplot(subnum)
+        plt.plot(star.xss, star.yss, color="k", linewidth=1)
+
+def plot_all():
+    stars = [StarPolygon(0,0,n) for n in range(3,9)]
+    nrow, ncol = 2, 3
+    
+    for i, st in enumerate(stars):
+        subnum = nrow*100+ncol*10+(i+1)
+        move_uvertex(subnum, st)
+        st.reset_uvertex()
+        plot_star_polygon(subnum, st.vertex)
+        
+    plt.show()
+
+plot_all()
+
+
+
+<img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" /><img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
