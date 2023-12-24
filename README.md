@@ -95,7 +95,7 @@ n : the number of outer vertices
 7. Result
 <img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
-8. Put All Together
+8. Python Code
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
