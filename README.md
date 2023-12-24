@@ -12,23 +12,23 @@
 ## 2. Calculate outer vertices
 ### n : the number of outer vertices
 <p float="left">
-<img src="images/figure-002.jpg" width="150" />
+<img src="images/figure-002.jpg" width="350" />
 </p>
 
 ## 3. Calculate Inner Vertices
 ### Case 1: n=3 or 4
 <p float="left">
-<img src="images/figure-003.jpg" width="250"  />
+<img src="images/figure-003.jpg" width="350"  />
 </p>
 
 ### Case 2: n > 4
 Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
 <p float="left">
-<img src="images/figure-004.jpg" width="290" />
+<img src="images/figure-004.jpg" width="350" />
 </p>
 
 ### Case 3: x1=x2 or x3=x4
-<img src="images/figure-005.jpg" width="300" />
+<img src="images/figure-005.jpg" width="350" />
 
 ## 4. Line Index Sequence of Intersection Point
 <table style="width:100%;">
@@ -95,7 +95,7 @@ Find the intersection point of two lines of given four outer vertices. The slope
 
 ## 6. Move Inner Vertices
 <p float="left">
-<img src="images/figure-006.jpg" width="290" />
+<img src="images/figure-006.jpg" width="350" />
 </p>
 
 ## 7. Result
