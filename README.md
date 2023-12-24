@@ -23,10 +23,10 @@
 Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
 <img src="images/image6.png" style="width:3.88542in;height:3.86458in" /><img src="images/image7.png" style="width:4.65625in;height:4.3125in" />
 
-When x1=x2 or x3=x4
+### When x1=x2 or x3=x4
 <img src="images/image8.png" style="width:4.125in;height:2.25in" />
 
-4. Intersection Point Line Index Sequence**
+## 4. Intersection Point Line Index Sequence**
 <table style="width:100%;">
 <colgroup>
 <col style="width: 20%" />
@@ -86,16 +86,16 @@ When x1=x2 or x3=x4
 </tbody>
 </table>
 
-5. Star Polygon (n= 3, 4, 5, 6, 7, 8 )**
+## 5. Star Polygon (n= 3, 4, 5, 6, 7, 8 )**
 <img src="images/image9.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
-6. Move Inner Vertices**
+## 6. Move Inner Vertices**
 <img src="images/image10.png" style="width:3.69792in;height:3.61458in" /><img src="images/image11.png" style="width:6.1875in;height:1.64583in" />
 
-7. Result
+## 7. Result
 <img src="images/image12.png" style="width:5.83333in;height:4.30208in" alt="A group of images of a star Description automatically generated with medium confidence" />
 
-8. Python Code
+## 8. Python Code
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
