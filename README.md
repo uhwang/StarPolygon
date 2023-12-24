@@ -13,7 +13,7 @@ Definition of Star Polygons
 
 **1. Define Star Polygon**
 
-<img src="images/media/image1.png" style="width:3.28125in;height:3.59375in" />
+<img src="images/image1.png" style="width:3.28125in;height:3.59375in" />
 
 **2. Calculate outer vertices**
 
