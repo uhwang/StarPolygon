@@ -24,7 +24,7 @@
 ### Case 2: n > 4
 Find the intersection point of two lines of given four outer vertices. The slopes of two lines are normal.
 <p float="left">
-<img src="images/figure-004.jpg" width="450" />
+<img src="images/figure-004.jpg" width="500" />
 </p>
 
 ### Case 3: x1=x2 or x3=x4
