@@ -30,7 +30,7 @@ Find the intersection point of two lines of given four outer vertices. The slope
 <img src="images/image7.png" width="330" />
 </p>
 
-### When x1=x2 or x3=x4
+### Case 3: x1=x2 or x3=x4
 <img src="images/image8.png" width="300" />
 
 ## 4. Intersection Point Line Index Sequence**
