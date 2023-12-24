@@ -98,7 +98,7 @@ Find the intersection point of two lines of given four outer vertices. The slope
 </p>
 
 ## 7. Result
-<img src="images/result-02.jpg"/>
+<img src="images/result-03.jpg"/>
 
 ## 8. Python Code
 ```python
