@@ -7,7 +7,7 @@
     - To find the inner vertices of a star polygon, we need to calculate the intersection points of the lines formed by the outer vertices. However, the calculation is different for the case where there are 3 or 4 outer vertices.
 
 2. Star Polygon Diagram**
-<img src="images/image1.png" style="width:2.28125in;height:2.59375in" />
+<img src="images/image1.png" style="width:1.28125in;height:1.59375in" />
 
 2. Calculate outer vertices**
 n : the number of outer vertices
