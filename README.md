@@ -249,8 +249,3 @@ def plot_all():
         
     plt.show()
 ```
-
-plot_all()
-```
-
-aa
