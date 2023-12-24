@@ -10,7 +10,7 @@
 <img src="images/image1.png" style="width:1.28125in;height:1.59375in" />
 
 2. Calculate outer vertices**
-n : the number of outer vertices
+    - n : the number of outer vertices
 <img src="images/image2.png" style="width:3.73958in;height:1.22917in" /><img src="images/image3.png" style="width:2.21875in;height:2.15625in" />
 
 3. Calculate Inner Vertices**
